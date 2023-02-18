@@ -2,8 +2,8 @@
 function App() {
 
   return (
-    <div className="App">
-    
+    <div className="app bg-gray-20">
+    app
     </div>
   )
 }
