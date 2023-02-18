@@ -2,9 +2,18 @@ import React from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
 import Link from "./Link";
+import { SelectedPage } from "@/share/types";
 
-const index = () => {
+interface Props {
+    selectedPage: SelectedPage,
+    setSelectedPage: (value: SelectedPage)=>void
+
+}
+
+const index = ({selectedPage, setSelectedPage}: Props) => {
   const flexBetween = "flex items-center justify-center";
+  console.log();
+  
   return (
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
@@ -21,6 +30,8 @@ const index = () => {
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
                 />
+                
+
                 <Link
                   page="Benefits"
                   selectedPage={selectedPage}
