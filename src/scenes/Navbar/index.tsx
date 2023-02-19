@@ -19,7 +19,54 @@ const index = ({ selectedPage, setSelectedPage }: Props) => {
 
   return (
     <nav>
-      
+      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+        <div className={`${flexBetween} mx-auto w-5/6 bg-[red]`}>
+          <div className={`${flexBetween} w-full gap-16`}>
+            {/* LEFT SIDE */}
+            <img alt="logo" src={Logo} />
+            {/* RIGHT SIDE */}
+            {isAboveMediumScreen ? (
+              <div className={`flex items-center justify-center w-full`}>
+                <div className={`${flexBetween} gap-8 bg-[blue] text-sm`}>
+                  <Link
+                    page="Home"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <Link
+                    page="Benefits"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <Link
+                    page="Our Classes"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                  <Link
+                    page="Contact Us"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+                <div className={`${flexBetween} gap-8 bg-[green]`}>
+                  <p>Sign In</p>
+                  <ActionButton setSelectedPage={setSelectedPage}>
+                    Become a Member
+                  </ActionButton>
+                </div>
+              </div>
+            ) : (
+              <button
+                className="bg-secondary-500 rounded-full p-2"
+                onClick={() => setIsMenuToggled(!isMenuToggled)}
+              >
+                <Bars3Icon className="h-6 w-6 text-white" />
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };
