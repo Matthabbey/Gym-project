@@ -4,6 +4,7 @@ import Logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedPage } from "@/share/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import ActionButton from "@/share/ActionButton";
 
 interface Props {
   selectedPage: SelectedPage;
@@ -51,9 +52,9 @@ const index = ({ selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
-                <div className={`${flexBetween}`}>
+                <div className={`${flexBetween} gap-8`}>
                   <p>Sign In</p>
-                  <button>Become a Member</button>
+                  <ActionButton setSelectedPage={setSelectedPage}>Become a Member</ActionButton>
                 </div>
               </div>
             ) : (
