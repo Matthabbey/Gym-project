@@ -20,14 +20,16 @@ const index = ({ selectedPage, setSelectedPage }: Props) => {
   return (
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
-        <div className={`${flexBetween} mx-auto w-5/6 bg-[red]`}>
+        <div className={`${flexBetween} mx-auto w-5/6`}>
+        {/* <img alt="logo" src={Logo} /> */}
+
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
             <img alt="logo" src={Logo} />
             {/* RIGHT SIDE */}
             {isAboveMediumScreen ? (
-              <div className={`flex items-center justify-center w-full`}>
-                <div className={`${flexBetween} gap-8 bg-[blue] text-sm`}>
+              <div className={`flex items-center justify-center`}>
+                <div className={`${flexBetween} gap-8 text-sm`}>
                   <Link
                     page="Home"
                     selectedPage={selectedPage}
@@ -49,7 +51,7 @@ const index = ({ selectedPage, setSelectedPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
-                <div className={`${flexBetween} gap-8 bg-[green]`}>
+                <div className={`${flexBetween} gap-8 bg-[]`}>
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Become a Member
@@ -58,7 +60,7 @@ const index = ({ selectedPage, setSelectedPage }: Props) => {
               </div>
             ) : (
               <button
-                className="bg-secondary-500 rounded-full p-2"
+                className="rounded-full bg-secondary-500"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
                 <Bars3Icon className="h-6 w-6 text-white" />
